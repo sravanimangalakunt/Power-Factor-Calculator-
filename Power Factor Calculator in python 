@@ -1,0 +1,24 @@
+Power Factor Calculator
+
+import math
+
+print("Power Factor Calculator")
+print("-----------------------")
+
+real_power = float(input("Enter Real Power (W): "))
+apparent_power = float(input("Enter Apparent Power (VA): "))
+
+if apparent_power > 0:
+power_factor = real_power / apparent_power
+
+# Limit the result to a valid power-factor range
+if 0 <= power_factor <= 1:
+    angle = math.degrees(math.acos(power_factor))
+
+    print("Power Factor =", round(power_factor, 3))
+    print("Phase Angle =", round(angle, 2), "degrees")
+else:
+    print("Invalid values! Power factor must be between 0 and 1.")
+
+else:
+print("Apparent power must be greater than 0.")
